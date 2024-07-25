@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Grammar Corrector",
+  "version": "1.0",
+  "description": "Correct grammar using Pieces Copilot SDK",
+ "permissions": ["sidePanel", "activeTab", "contextMenus", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }
+],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  }
+}
